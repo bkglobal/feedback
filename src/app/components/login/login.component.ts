@@ -16,11 +16,11 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    // const header = new HttpHeaders({'Access-Control-Allow-Origin': '*'});
+    const header = new HttpHeaders({'Access-Control-Allow-Origin': '*'});
 
-    // this.http.post('', {email: this.email, password: this.password}, {headers: header}).subscribe((res) => {
-
-    // });
+    this.http.post('http://localhost:3000/addUser', {email: this.email, password: this.password}, {headers: header}).subscribe((res) => {
+      console.log('result ', res);
+    });
   }
 
 }
